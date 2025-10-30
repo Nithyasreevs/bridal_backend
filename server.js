@@ -26,11 +26,15 @@ import adminChatbotRoutes from "./routes/AdminChatbotRoutes.js";
 import reportRoutes from './routes/reportRoutes.js';
 import notificationRoutes from "./routes/notificationRoutes.js";
 const app = express();
-
 app.use(cors({
-  origin: "http://localhost:5173", 
+  origin: [
+    "http://localhost:5173",
+    "https://bridal-frontend-gray.vercel.app"
+  ],
   credentials: true
 }));
+
+
 app.use(bodyParser.json());
 app.use(
   session({
